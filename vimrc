@@ -43,3 +43,5 @@ let g:solarized_termcolors=256
 
 " cursor move to next line with left/right
 set whichwrap=b,s,h,l,<,>,[,],~
+
+set belloff=all
