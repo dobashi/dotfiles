@@ -34,6 +34,10 @@ PATH=$PATH:$HOME/bin
 if isLinux; then
   alias open='xdg-open'
   alias rm='trash-put'
+  # git
+  source ~/.git-prompt.sh
+  source ~/.git-completion.bash
+  PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\[\033[01;33m\]$(__git_ps1 "(%s)")\[\033[00m\]\$ '
 fi
 
 # macOS
@@ -65,10 +69,6 @@ alias g='git'
 alias gac='git add .;git commit'
 alias gsu='git submodule update'
 
-source ~/.git-prompt.sh
-source ~/.git-completion.bash
-PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\[\033[01;33m\]$(__git_ps1 "(%s)")\[\033[00m\]\$ '
-
 # gradle
 alias gradlea='./gradlew assemble'
 alias gradleb='./gradlew build'
@@ -77,3 +77,11 @@ alias gradlei='./gradlew --warning-mode all publishToMaveLocal'
 
 # npm
 export PATH=$PATH:./node_modules/.bin/:./assets/node_modules/.bin/
+alias npmb='npm run build'
+alias npmd='npm run deploy'
+
+# cd
+alias cd..2='cd ../..'
+alias cd..3='cd ../../../'
+alias cd..4='cd ../../../..'
+

@@ -50,3 +50,4 @@ set whichwrap=b,s,h,l,<,>,[,],~
 noremap <C-\[> <esc>
 noremap! <C-\[> <esc>
 inoremap ;; <esc>
+
