@@ -7,11 +7,18 @@ isMac() {
   [ $(uname) = "Darwin" ]
 }
 isCygwin(){
-  if [[ isLinux || isMac ]] ; then
+  if isLinux || isMac; then
    false 
   else
     [ $(uname -o) = "Cygwin" ]
   fi
+}
+
+gitCompletion(){
+  source ~/.git-prompt.sh
+  source ~/.git-completion.bash
+  PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\[\033[01;33m\]$(__git_ps1 "(%s)")\[\033[00m\]\$ '
+
 }
 
 export EDITOR=vim
@@ -34,10 +41,7 @@ PATH=$PATH:$HOME/bin
 if isLinux; then
   alias open='xdg-open'
   alias rm='trash-put'
-  # git
-  source ~/.git-prompt.sh
-  source ~/.git-completion.bash
-  PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\[\033[01;33m\]$(__git_ps1 "(%s)")\[\033[00m\]\$ '
+  gitCompletion
 fi
 
 # macOS
@@ -62,6 +66,7 @@ fi
 # Cygwin
 if isCygwin; then
   alias open='explorer'
+  gitCompletion
 fi
 
 #git
