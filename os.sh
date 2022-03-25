@@ -14,5 +14,10 @@ isMac(){
 }
 
 isCygwin(){
-  [ $(uname -o) = "Cygwin" ]
+  if [[ isLinux || isMac ]] ; then
+   false 
+  else
+    [ $(uname -o) = "Cygwin" ]
+  fi
 }
+

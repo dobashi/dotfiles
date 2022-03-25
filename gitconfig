@@ -6,7 +6,9 @@
 	b = branch
 	c = commit
 	co = checkout
-	d = diff
+    df = diff
+    dfc = diff --cached
+    dfh = diff HEAD^ HEAD 
 	l  = log
 	lo = log --oneline
 	lp = log --no-merges --date=short --pretty='format:%C(yellow)%h %C(green)%cd %C(blue)%an%C(red)%d %C(reset)%s'
@@ -18,3 +20,8 @@
 	psm = push origin master
 	s = status
 	su = submodule update
+[pull]
+	default = current
+	rebase = merges
+[push]
+	default = current

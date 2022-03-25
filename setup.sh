@@ -18,6 +18,11 @@ EOF
 # vim
 ln -s $DIR/vimrc ~/.vimrc
 
+# git
+ln -s $DIR/gitconfig ~/.gitconfig
+ln -s $DIR/git-prompt.sh ~/.git-prompt.sh
+ln -s $DIR/git-completion.bash ~/.git-completion.bash
+
 # Linux
 if isLinux; then
   sudo apt update -y \
@@ -28,9 +33,10 @@ fi
 
 # macOS
 if isMac; then
-  brew install git rmtrash
+  cat ~/.bashrc >> ~/.zshrc
+  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  brew install git trash tree vim pstree
+  defaults write -g ApplePressAndHoldEnabled -bool false
 fi
 
-# git
-ln -s $DIR/gitconfig ~/.gitconfig
 
