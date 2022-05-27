@@ -26,7 +26,8 @@ export GIT_EDITOR=$EDITOR
 
 alias vi='vim'
 alias mv='mv -i'
-alias ls='ls -F'
+alias ls='exa -F --icons --group-directories-first'
+#alias ls='ls -F'
 alias ll='ls -l'
 alias llh='ls -lh'
 alias la='ls -a'
@@ -46,7 +47,7 @@ fi
 
 # macOS
 if isMac; then
-  alias rm='trash -F'
+  alias rm='trash' # -F'
   alias top='top -o cpu'
   alias locate='mdfind -name'
   #alias updatedb='cd /usr/libexec; sudo /usr/libexec/locate.updatedb'
@@ -82,8 +83,8 @@ alias gradlei='./gradlew --warning-mode all publishToMaveLocal'
 
 # npm
 export PATH=$PATH:./node_modules/.bin/:./assets/node_modules/.bin/
-alias npmb='npm run build'
-alias npmd='npm run deploy'
+alias npmb='time npm run build'
+alias npmd='time npm run deploy'
 
 # cd
 alias cd..2='cd ../..'

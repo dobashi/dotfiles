@@ -4,6 +4,7 @@
 [alias]
 	a = add .
 	b = branch
+	br = branch -r
 	c = commit
 	co = checkout
     df = diff
@@ -13,15 +14,21 @@
 	lo = log --oneline
 	lp = log --no-merges --date=short --pretty='format:%C(yellow)%h %C(green)%cd %C(blue)%an%C(red)%d %C(reset)%s'
 	p  = pull
+	pr  = pull --rebase
 	pd = pull --recurse-submodules origin develop
 	pm = pull --recurse-submodules origin master
 	ps  = push
 	psd = push origin develop
 	psm = push origin master
+	r = remote -v
+    rc = rebase --continue
 	s = status
 	su = submodule update
 [pull]
 	default = current
-	rebase = merges
+	rebase = true
+#	rebase = merges
 [push]
 	default = current
+[init]
+	defaultBranch = develop
