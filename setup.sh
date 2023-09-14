@@ -34,8 +34,11 @@ fi
 # macOS
 if isMac; then
   cat ~/.bashrc >> ~/.zshrc
-  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-  brew install git trash tree vim pstree
+  echo "Homebrew start"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  echo "Install git, trash, exa and tools"
+  brew install git trash tree vim pstree exa
+  echo "Enable key repeat"
   defaults write -g ApplePressAndHoldEnabled -bool false
 fi
 
