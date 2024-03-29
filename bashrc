@@ -91,3 +91,6 @@ alias cd..2='cd ../..'
 alias cd..3='cd ../../../'
 alias cd..4='cd ../../../..'
 
+# history
+alias his='history'
+alias his1='history 1000'

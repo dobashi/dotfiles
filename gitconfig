@@ -12,7 +12,8 @@
     dfh = diff HEAD^ HEAD 
 	l  = log
 	lo = log --oneline
-	lp = log --no-merges --date=short --pretty='format:%C(yellow)%h %C(green)%cd %C(blue)%an%C(red)%d %C(reset)%s'
+	lod = log --pretty='format:%C(yellow)%h%C(red)%d %C(green)%as %C(blue)%<(10,trunc)%an %C(reset)%s'
+    lg = log --graph --all --format='%x09%C(red)%d %Cblue%<(12,trunc)%an %C(green)%aI %C(yellow)%h %Creset%s'
 	p  = pull
 	pr  = pull --rebase
 	pd = pull --recurse-submodules origin develop
@@ -24,6 +25,7 @@
     rc = rebase --continue
 	s = status
 	su = submodule update
+	sw = switch
 [pull]
 	default = current
 	rebase = true
