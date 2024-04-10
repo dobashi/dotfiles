@@ -26,12 +26,12 @@ export GIT_EDITOR=$EDITOR
 
 alias vi='vim'
 alias mv='mv -i'
-alias ls='exa -F --icons --group-directories-first'
+alias ls='exa -F --icons --group-directories-first --time-style long-iso'
 #alias ls='ls -F'
 alias ll='ls -l'
 alias llh='ls -lh'
-alias la='ls -a'
-alias lla='ls -la'
+alias la='ls -a -a'
+alias lla='ls -la -a'
 alias df='df -h | grep -v /dev/loop'
 
 ERL_AFLAGS="-kernel shell_history enabled"
