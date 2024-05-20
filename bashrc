@@ -13,7 +13,6 @@ isCygwin(){
     [ $(uname -o) = "Cygwin" ]
   fi
 }
-
 gitCompletion(){
   source ~/.git-prompt.sh
   source ~/.git-completion.bash
@@ -52,6 +51,7 @@ if isMac; then
   alias locate='mdfind -name'
   #alias updatedb='cd /usr/libexec; sudo /usr/libexec/locate.updatedb'
   alias code='/Applications/Visual\ Studio\ Code.app/Contents/MacOS/Electron'
+  alias term='/System/Applications/Utilities/Terminal.app/Contents/MacOS/Terminal'
   alias vim='/opt/homebrew/bin/vim'
 #  . /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.zsh
   . /Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh
