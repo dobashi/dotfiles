@@ -94,3 +94,4 @@ alias cd..4='cd ../../../..'
 # history
 alias his='history'
 alias his1='history 1000'
+alias hisg='history 900 | grep'
